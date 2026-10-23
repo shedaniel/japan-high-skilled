@@ -49,7 +49,7 @@ export function ActivitySelector({
     >
       <ToggleGroup
         aria-label={t("activity.label")}
-        className="grid w-full gap-2 sm:grid-cols-3"
+        className="grid w-full grid-cols-1 items-stretch gap-2 sm:grid-cols-3"
         onValueChange={(values) => {
           const next = values.at(-1);
           if (next && isActivityType(next) && next !== activity) onChange(next);
@@ -58,7 +58,7 @@ export function ActivitySelector({
       >
         {ACTIVITY_OPTIONS.map((option) => (
           <ToggleGroupItem
-            className="h-auto min-h-24 w-full flex-col items-start justify-start gap-1.5 whitespace-normal rounded-xl border border-input bg-background p-4 text-left shadow-xs/5 data-pressed:border-primary data-pressed:bg-primary/5"
+            className="h-auto min-h-24 w-full flex-col items-start justify-start gap-1.5 whitespace-normal rounded-xl border border-input bg-background p-4 text-left shadow-xs/5 data-pressed:border-primary data-pressed:bg-primary/5 sm:h-auto"
             key={option.value}
             value={option.value}
           >
