@@ -5,6 +5,8 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Set by CI so the app works under the GitHub Pages project path.
+  base: process.env.BASE_PATH ?? '/',
   plugins: [react(), tailwindcss()],
   resolve: { alias: { '@': path.resolve(__dirname, './src') } },
 })
